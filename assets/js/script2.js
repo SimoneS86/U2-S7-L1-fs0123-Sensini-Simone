@@ -1,10 +1,13 @@
 function creaPet() {
-  var petName = document.getElementById("petName").value;
-  var ownerName = document.getElementById("ownerName").value;
-  var species = document.getElementById("species").value;
-  var breed = document.getElementById("breed").value;
+  let list = document.getElementById("list");
+  let petName = document.getElementById("petName").value;
+  let ownerName = document.getElementById("ownerName").value;
+  let species = document.getElementById("species").value;
+  let breed = document.getElementById("breed").value;
 
-  var pet = new Pet(petName, ownerName, species, breed);
+  let pet = new Pet(petName, ownerName, species, breed);
+  let petString = JSON.stringify(pet);
+  list.innerText += petString;
   console.log(pet);
 }
 
@@ -24,10 +27,10 @@ class Pet {
   }
 }
 
-var pet1 = new Pet("Fido", "Mario Rossi", "Cane", "Pastore Tedesco");
-var pet2 = new Pet("Belle", "Maria Bianchi", "Gatto", "Siamense");
-var pet3 = new Pet("Toby", "Maria Bianchi", "Scimmia", "Gorilla");
-var pet4 = new Pet("Whiskers", "Marco Verde", "Cane", "Labrador");
+let pet1 = new Pet("Fido", "Mario Rossi", "Cane", "Pastore Maremmano");
+let pet2 = new Pet("Belle", "Maria Bianchi", "Gatto", "Siamense");
+let pet3 = new Pet("Toby", "Maria Bianchi", "Scimmia", "Gorilla");
+let pet4 = new Pet("Whiskey", "Marco Verde", "Cane", "Labrador");
 
 pet1.hasSameOwner(pet2);
 pet2.hasSameOwner(pet3);
